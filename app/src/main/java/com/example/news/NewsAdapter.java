@@ -14,7 +14,7 @@ import java.util.List;
 public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
     Context context;
     List<News> newsList;
-
+    //which one should be replecated
     public NewsAdapter(Context context, List<News> newsList) {
         this.context = context;
         this.newsList = newsList;
@@ -24,7 +24,6 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
     @Override
     public NewsHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.newsitem, parent,false);
-
         return new NewsHolder(view);
     }
 
@@ -42,7 +41,7 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
 
     public class NewsHolder extends RecyclerView.ViewHolder {
         TextView newsTitle, newsDescription;
-
+        //replicate the data
         public NewsHolder(@NonNull View itemView) {
             super(itemView);
             newsTitle=itemView.findViewById(R.id.title);
