@@ -18,5 +18,6 @@ public class MainActivity extends AppCompatActivity {
         List<News> newsList = new ArrayList<>();
         newsList.add(news1);
         newsList.add(news2);
+        NewsAdapter adapter = new NewsAdapter(MainActivity.this, newsList);
     }
 }
