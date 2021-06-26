@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private Retrofit retrofit;
     private  NewsInterface newsInterface;
     List<ArticlesItem>  news;
-    String sports="sports", health = "health", technology = "technnology",
-            enntertainment = "entertainment", general = "general" ,business = "business";
+    //String sports="sports", health = "health", technology = "technnology",
+      //      entertainment = "entertainment", general = "general" ,business = "business";
     BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         newsRecycler=findViewById(R.id.newsRecycler);
         bottomNavigationView = findViewById(R.id.bottomNavigation);
-        String category="health";
+        String category="general";
         setNavigationListener();
-        setNewsRetrofit(category);
+        setNewsRetrofit(category); // by default general will open for we have set general when we open the app at first.
 
 
 
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         responseNews.enqueue(new Callback<NewsModel>() {
             @Override
             public void onResponse(Call<NewsModel> call, Response<NewsModel> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     NewsModel mainResponse = response.body();
                     news = mainResponse.getArticles();
                     /*for (ArticlesItem articlesItem : news) {
@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
                     newsRecycler.setAdapter(adapter);
                 }
             }
-
             @Override
             public void onFailure(Call<NewsModel> call, Throwable t) {
 
