@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void setNewsRetrofit(String category){
-        actionBar.setTitle("General");//set action bar i.e title at the top of the app.
+        String s1=new String(String.valueOf(Character.toUpperCase(category.charAt(0))));
+        actionBar.setTitle(s1+category.substring(1));//set action bar i.e title at the top of the app.
         progressBar.setVisibility(View.VISIBLE);
         newsRecycler.setVisibility(View.INVISIBLE);//at this function, the data is set so we make visibility here above it.
         retrofit = new Retrofit.Builder().baseUrl("https://newsapi.org/").addConverterFactory(GsonConverterFactory.create()).build();//base url has added.
