@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="general" android:icon="@drawable/seller"/>
-    <item android:title="sports" android:icon="@drawable/seller"/>
-    <item android:title="technology" android:icon="@drawable/seller"/>
-    <item android:title="health" android:icon="@drawable/seller"/>
-    <item android:title="business" android:icon="@drawable/seller"/>
+    <item android:title="general"
+        android:id="@+id/general"
+        android:icon="@drawable/seller"/>
+    <item android:title="sports"
+        android:id="@+id/sports"
+        android:icon="@drawable/seller"/>
+    <item android:title="technology"
+        android:id="@+id/technology"
+        android:icon="@drawable/seller"/>
+    <item android:title="health"
+        android:id="@+id/seller"
+        android:icon="@drawable/seller"/>
+    <item android:title="business"
+        android:id="@+id/business"
+        android:icon="@drawable/seller"/>
 
 </menu>
