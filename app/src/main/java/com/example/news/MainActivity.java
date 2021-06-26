@@ -29,16 +29,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         newsRecycler=findViewById(R.id.newsRecycler);
-        setNewsRetrofit();
+        String category="health";
+        setNewsRetrofit(category);
 
 
 
     }
-    public void setNewsRetrofit(){
+    public void setNewsRetrofit(String category){
         retrofit = new Retrofit.Builder().baseUrl("https://newsapi.org/").addConverterFactory(GsonConverterFactory.create()).build();//base url has added.
         //data has come here.
         newsInterface = retrofit.create(NewsInterface.class);
-        Call<NewsModel> responseNews = newsInterface.getNewsData();
+        Call<NewsModel> responseNews = newsInterface.getNewsData(category);
         //whn we do all these thing then our UI will be lagging , so to remove this indescrepency, Retrofit has a method
         //enqueue will do these data fetching things in background thread.
         responseNews.enqueue(new Callback<NewsModel>() {
