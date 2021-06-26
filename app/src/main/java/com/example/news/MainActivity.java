@@ -83,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
+                progressBar.setVisibility(View.VISIBLE);
+                newsRecycler.setVisibility(View.INVISIBLE);
                 switch (id){
                     case R.id.general:
                         setNewsRetrofit("general");
