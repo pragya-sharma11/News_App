@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    android:background="#E3DDDD"
     android:orientation="vertical"
-    android:background="@color/white"
-    >
-
+    tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/newsRecycler"
         android:layout_width="match_parent"
         android:layout_height="620dp"
-        android:layout_marginTop="4sp" />
+        android:layout_marginTop="4sp"
+        android:visibility="visible" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
-        app:menu="@menu/bottom_nav_items"
-        android:layout_height="107dp" />
+        android:layout_height="107dp"
+        app:menu="@menu/bottom_nav_items" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="373dp" />
+
 </LinearLayout>
