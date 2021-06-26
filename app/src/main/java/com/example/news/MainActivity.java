@@ -9,25 +9,21 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class MainActivity extends AppCompatActivity {
     RecyclerView newsRecycler;
+    private Retrofit retrofit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         newsRecycler=findViewById(R.id.newsRecycler);
-        News news1 = new News("covid-19", "Warning for the third wave");
-        News news2 = new News("ANdroid", "New Feature");
-        News news3 = new News("Bitcoin", "Prices on peak");
-        News news4 = new News("Amazon", "WoW India");
-        News news5 = new News("Google", "SKET hire Freshers!!");
+        retrofit = new Retrofit.Builder().baseUrl("https://newsapi.org/").addConverterFactory(GsonConverterFactory.create()).build();
+        //data has come here.
 
-        List<News> newsList = new ArrayList<>();
-        newsList.add(news1);
-        newsList.add(news2);
-        newsList.add(news3);
-        newsList.add(news4);
-        newsList.add(news5);
+
         newsRecycler.setLayoutManager(new LinearLayoutManager(this));//default vertical
         NewsAdapter adapter = new NewsAdapter(MainActivity.this, newsList);
         newsRecycler.setAdapter(adapter);
