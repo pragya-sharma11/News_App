@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         newsRecycler=findViewById(R.id.newsRecycler);
         bottomNavigationView = findViewById(R.id.bottomNavigation);
         progressBar = findViewById(R.id.progressBar);
-        newsRecycler.setVisibility(View.INVISIBLE);
         String category="general";
         setNavigationListener();
         setNewsRetrofit(category); // by default general will open for we have set general when we open the app at first.
@@ -69,7 +68,9 @@ public class MainActivity extends AppCompatActivity {
                     }*/
                     newsRecycler.setLayoutManager(new LinearLayoutManager(MainActivity.this));//default vertical
                     NewsAdapter adapter = new NewsAdapter(MainActivity.this, news);
-                    newsRecycler.setAdapter(adapter);
+                    progressBar.setVisibility(View.INVISIBLE);
+                    newsRecycler.setVisibility(View.VISIBLE);
+                    newsRecycler.setAdapter(adapter);//at this point, the data is set so we make visibility here above it.
                 }
             }
             @Override
