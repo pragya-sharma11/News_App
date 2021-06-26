@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="general"/>
+    <item android:title="sports"/>
+    <item android:title="technology"/>
+    <item android:title="health"/>
+    <item android:title="business"/>
+
+</menu>
