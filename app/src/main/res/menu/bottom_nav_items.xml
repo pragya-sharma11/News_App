@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="general"
         android:id="@+id/general"
-        android:icon="@drawable/seller"/>
+        android:icon="@drawable/homeicon"/>
     <item android:title="sports"
         android:id="@+id/sports"
-        android:icon="@drawable/seller"/>
+        android:icon="@drawable/sportsicon"/>
     <item android:title="technology"
         android:id="@+id/technology"
-        android:icon="@drawable/seller"/>
+        android:icon="@drawable/technologyicon"/>
     <item android:title="health"
         android:id="@+id/health"
-        android:icon="@drawable/seller"/>
+        android:icon="@drawable/healthicon"/>
     <item android:title="business"
         android:id="@+id/business"
-        android:icon="@drawable/seller"/>
+        android:icon="@drawable/business"/>
 
 </menu>
