@@ -1,6 +1,7 @@
 package com.example.news;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private  NewsInterface newsInterface;
     List<ArticlesItem>  news;
     ProgressBar progressBar;
+    private ActionBar actionBar;
     //String sports="sports", health = "health", technology = "technnology",
       //      entertainment = "entertainment", general = "general" ,business = "business";
     BottomNavigationView bottomNavigationView;
@@ -41,8 +43,10 @@ public class MainActivity extends AppCompatActivity {
         newsRecycler=findViewById(R.id.newsRecycler);
         bottomNavigationView = findViewById(R.id.bottomNavigation);
         progressBar = findViewById(R.id.progressBar);
+        actionBar = getSupportActionBar();
         String category="general";
         setNavigationListener();
+        actionBar.setTitle("General");
         setNewsRetrofit(category); // by default general will open for we have set general when we open the app at first.
 
 
@@ -86,19 +90,24 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id){
                     case R.id.general:
+                        actionBar.setTitle("General"); //set action bar i.e title at the top of the app.
                         setNewsRetrofit("general");
                         return true;//by default it eill be true but if we put flase here and click on some another category
                         // then again click to general then it will not highlight it.
                     case R.id.sports:
+                        actionBar.setTitle("Sports");
                         setNewsRetrofit("sports");
                         return true;
                     case R.id.technology:
+                        actionBar.setTitle("Technology");
                         setNewsRetrofit("technology");
                         return true;
                     case R.id.health:
+                        actionBar.setTitle("Health");
                         setNewsRetrofit("health");
                         return true;
                     case R.id.business:
+                        actionBar.setTitle("Business");
                         setNewsRetrofit("business");
                         return true;
                     default:
