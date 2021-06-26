@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     private Retrofit retrofit;
     private  NewsInterface newsInterface;
     List<ArticlesItem>  news;
+    String sports="sports", health = "health", technology = "technnology",
+            enntertainment = "entertainment", general = "general" ,business = "business";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
                     NewsModel mainResponse = response.body();
                     news = mainResponse.getArticles();
-                    for (ArticlesItem articlesItem : news) {
+                    /*for (ArticlesItem articlesItem : news) {
                         Log.d("tag", articlesItem.getTitle()); //for testing
-                    }
+                    }*/
                     newsRecycler.setLayoutManager(new LinearLayoutManager(MainActivity.this));//default vertical
                     NewsAdapter adapter = new NewsAdapter(MainActivity.this, news);
                     newsRecycler.setAdapter(adapter);

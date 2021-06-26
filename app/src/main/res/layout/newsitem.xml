@@ -12,19 +12,22 @@
         android:layout_height="wrap_content"
         android:elevation="8dp"
         android:padding="8dp"
-        app:cardCornerRadius="5dp"
-        android:background="@color/white">
+        app:cardCornerRadius="8dp"
+        android:background="@color/white"
+        android:layout_marginBottom="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="5sp">
+            android:layout_marginTop="5sp"
+            android:orientation="vertical">
+
             <ImageView
-                android:src="@drawable/seller"
+                android:id="@+id/newsImage"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:id="@+id/newsImage" />
+                android:scaleType="fitXY"
+                android:src="@drawable/seller" />
 
 
             <TextView
@@ -43,9 +46,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="4sp"
+                android:padding="4sp"
                 android:text="Description"
                 android:textSize="18sp"
-                android:padding="4sp"
                 android:textStyle="italic" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

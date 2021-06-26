@@ -38,7 +38,7 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
         holder.newsDescription.setText(singleNewsItem.getDescription());
         Glide.with(context).load(singleNewsItem.getUrlToImage()).into(holder.newsImage);
         //holder.newsImage.setImageResource(singleNewsItem.getUrlToImage().);
-        // here we can't accees inages like this coz image is not on our local machine.
+        // here we can't access images like this coz image is not on our local machine.
 
     }
 
