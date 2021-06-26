@@ -4,7 +4,7 @@ import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
 public class NewsModel{
-
+    //this is a response class where response from server will be held.
 	@SerializedName("totalResults")
 	private int totalResults;
 

@@ -9,13 +9,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.news.modelclasses.ArticlesItem;
+
 import java.util.List;
 
 public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
     Context context;
-    List<News> newsList;
+    List<ArticlesItem> newsList;
     //which one should be replecated
-    public NewsAdapter(Context context, List<News> newsList) {
+    public NewsAdapter(Context context, List<ArticlesItem> newsList) {
         this.context = context;
         this.newsList = newsList;
     }
@@ -29,9 +31,9 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull NewsHolder holder, int position) {
-        News item = newsList.get(position);
+        ArticlesItem item = newsList.get(position);
         holder.newsTitle.setText(item.getTitle());
-        holder.newsDescription.setText(item.getDesc());
+        //holder.newsDescription.setText(item.getDesc());
     }
 
     @Override
