@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.example.news.modelclasses.ArticlesItem;
 import com.example.news.modelclasses.NewsModel;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private Retrofit retrofit;
     private  NewsInterface newsInterface;
     List<ArticlesItem>  news;
+    ProgressBar progressBar;
     //String sports="sports", health = "health", technology = "technnology",
       //      entertainment = "entertainment", general = "general" ,business = "business";
     BottomNavigationView bottomNavigationView;
@@ -37,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         newsRecycler=findViewById(R.id.newsRecycler);
         bottomNavigationView = findViewById(R.id.bottomNavigation);
+        progressBar = findViewById(R.id.progressBar);
+        newsRecycler.setVisibility(View.INVISIBLE);
         String category="general";
         setNavigationListener();
         setNewsRetrofit(category); // by default general will open for we have set general when we open the app at first.
@@ -45,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void setNewsRetrofit(String category){
+        progressBar.setVisibility(View.INVISIBLE);
+        newsRecycler.setVisibility(View.VISIBLE);
+
         retrofit = new Retrofit.Builder().baseUrl("https://newsapi.org/").addConverterFactory(GsonConverterFactory.create()).build();//base url has added.
         //data has come here.
         newsInterface = retrofit.create(NewsInterface.class);
