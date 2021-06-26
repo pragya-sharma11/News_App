@@ -46,13 +46,13 @@ public class MainActivity extends AppCompatActivity {
         actionBar = getSupportActionBar();
         String category="general";
         setNavigationListener();
-        actionBar.setTitle("General");
         setNewsRetrofit(category); // by default general will open for we have set general when we open the app at first.
 
 
 
     }
     public void setNewsRetrofit(String category){
+        actionBar.setTitle("General");//set action bar i.e title at the top of the app.
         progressBar.setVisibility(View.VISIBLE);
         newsRecycler.setVisibility(View.INVISIBLE);//at this function, the data is set so we make visibility here above it.
         retrofit = new Retrofit.Builder().baseUrl("https://newsapi.org/").addConverterFactory(GsonConverterFactory.create()).build();//base url has added.
@@ -90,24 +90,19 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id){
                     case R.id.general:
-                        actionBar.setTitle("General"); //set action bar i.e title at the top of the app.
                         setNewsRetrofit("general");
                         return true;//by default it eill be true but if we put flase here and click on some another category
                         // then again click to general then it will not highlight it.
                     case R.id.sports:
-                        actionBar.setTitle("Sports");
                         setNewsRetrofit("sports");
                         return true;
                     case R.id.technology:
-                        actionBar.setTitle("Technology");
                         setNewsRetrofit("technology");
                         return true;
                     case R.id.health:
-                        actionBar.setTitle("Health");
                         setNewsRetrofit("health");
                         return true;
                     case R.id.business:
-                        actionBar.setTitle("Business");
                         setNewsRetrofit("business");
                         return true;
                     default:
