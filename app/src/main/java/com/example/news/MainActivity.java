@@ -18,9 +18,16 @@ public class MainActivity extends AppCompatActivity {
         newsRecycler=findViewById(R.id.newsRecycler);
         News news1 = new News("covid-19", "Warning for the third wave");
         News news2 = new News("ANdroid", "New Feature");
+        News news3 = new News("Bitcoin", "Prices on peak");
+        News news4 = new News("Amazon", "WoW India");
+        News news5 = new News("Google", "SKET hire Freshers!!");
+
         List<News> newsList = new ArrayList<>();
         newsList.add(news1);
         newsList.add(news2);
+        newsList.add(news3);
+        newsList.add(news4);
+        newsList.add(news5);
         newsRecycler.setLayoutManager(new LinearLayoutManager(this));//default vertical
         NewsAdapter adapter = new NewsAdapter(MainActivity.this, newsList);
         newsRecycler.setAdapter(adapter);
