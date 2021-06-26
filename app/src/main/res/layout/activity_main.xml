@@ -8,12 +8,29 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/newsRecycler"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="620dp"
-        android:layout_marginTop="4sp"
-        android:visibility="visible" />
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="455dp"
+            android:foregroundGravity="center|center_horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/newsRecycler"
+            app:layout_constraintTop_toTopOf="@+id/newsRecycler"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/newsRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="620dp"
+            android:visibility="visible"
+            tools:ignore="MissingConstraints"
+             />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
@@ -21,9 +38,6 @@
         android:layout_height="107dp"
         app:menu="@menu/bottom_nav_items" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="match_parent"
-        android:layout_height="373dp" />
+
 
 </LinearLayout>
