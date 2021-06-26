@@ -1,14 +1,18 @@
 package com.example.news;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 
 import com.example.news.modelclasses.ArticlesItem;
 import com.example.news.modelclasses.NewsModel;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,13 +30,15 @@ public class MainActivity extends AppCompatActivity {
     List<ArticlesItem>  news;
     String sports="sports", health = "health", technology = "technnology",
             enntertainment = "entertainment", general = "general" ,business = "business";
-
+    BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         newsRecycler=findViewById(R.id.newsRecycler);
+        bottomNavigationView = findViewById(R.id.bottomNavigation);
         String category="health";
+        setNavigationListener();
         setNewsRetrofit(category);
 
 
@@ -63,6 +69,36 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<NewsModel> call, Throwable t) {
 
+            }
+        });
+    }
+    public  void setNavigationListener(){
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                switch (id){
+                    case R.id.general:
+                        setNewsRetrofit("general");
+                        return true;//by default it eill be true but if we put flase here and click on some another category
+                        // then again click to general then it will not highlight it.
+                    case R.id.sports:
+                        setNewsRetrofit("sports");
+                        return true;
+                    case R.id.technology:
+                        setNewsRetrofit("technology");
+                        return true;
+                    case R.id.health:
+                        setNewsRetrofit("health");
+                        return true;
+                    case R.id.business:
+                        setNewsRetrofit("business");
+                        return true;
+                    default:
+                        return  false;
+
+                }
+                 //return true-> focus/highlight on the icon on which user clicked
             }
         });
     }
