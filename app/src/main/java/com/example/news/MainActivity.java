@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     NewsModel mainResponse = response.body();
                     news = mainResponse.getArticles();
                     for (ArticlesItem articlesItem : news) {
-                        Log.d("tag",articlesItem.getTitle()); //for testing
+                        Log.d("tag", articlesItem.getTitle()); //for testing
                     }
                     newsRecycler.setLayoutManager(new LinearLayoutManager(MainActivity.this));//default vertical
                     NewsAdapter adapter = new NewsAdapter(MainActivity.this, news);
