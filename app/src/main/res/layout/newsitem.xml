@@ -10,15 +10,16 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="8sp"
-        android:padding="4sp"
+        android:elevation="8dp"
+        android:padding="8dp"
+        app:cardCornerRadius="5dp"
         android:background="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="7sp">
+            android:layout_marginTop="5sp">
 
             <TextView
                 android:id="@+id/title"
