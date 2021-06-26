@@ -50,9 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void setNewsRetrofit(String category){
-        progressBar.setVisibility(View.INVISIBLE);
-        newsRecycler.setVisibility(View.VISIBLE);
-
         retrofit = new Retrofit.Builder().baseUrl("https://newsapi.org/").addConverterFactory(GsonConverterFactory.create()).build();//base url has added.
         //data has come here.
         newsInterface = retrofit.create(NewsInterface.class);
@@ -70,7 +67,9 @@ public class MainActivity extends AppCompatActivity {
                     }*/
                     newsRecycler.setLayoutManager(new LinearLayoutManager(MainActivity.this));//default vertical
                     NewsAdapter adapter = new NewsAdapter(MainActivity.this, news);
-                    newsRecycler.setAdapter(adapter);
+                    progressBar.setVisibility(View.INVISIBLE);
+                    newsRecycler.setVisibility(View.VISIBLE);
+                    newsRecycler.setAdapter(adapter);//at this point, the data is set so we make visibility here above it.
                 }
             }
             @Override
