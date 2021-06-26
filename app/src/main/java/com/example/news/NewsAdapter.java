@@ -16,7 +16,7 @@ import java.util.List;
 public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
     Context context;
     List<ArticlesItem> newsList;
-    //which one should be replecated
+    //which one should be replicated.
     public NewsAdapter(Context context, List<ArticlesItem> newsList) {
         this.context = context;
         this.newsList = newsList;
@@ -33,7 +33,7 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
     public void onBindViewHolder(@NonNull NewsHolder holder, int position) {
         ArticlesItem singleNewsItem = newsList.get(position);
         holder.newsTitle.setText(singleNewsItem.getTitle());
-        //holder.newsDescription.setText(item.getDesc());
+        holder.newsDescription.setText(singleNewsItem.getDescription());
     }
 
     @Override
