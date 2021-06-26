@@ -20,6 +20,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="5sp">
+            <ImageView
+                android:src="@drawable/seller"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/newsImage" />
+
 
             <TextView
                 android:id="@+id/title"
