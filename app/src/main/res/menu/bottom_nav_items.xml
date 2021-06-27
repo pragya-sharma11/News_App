@@ -2,16 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="general"
         android:id="@+id/general"
-        android:icon="@drawable/homeicon"/>
+        android:icon="@drawable/home5icon"/>
     <item android:title="sports"
         android:id="@+id/sports"
-        android:icon="@drawable/sportsicon"/>
+        android:icon="@drawable/sportsicon"
+        />
     <item android:title="technology"
         android:id="@+id/technology"
-        android:icon="@drawable/technologyicon"/>
+        android:icon="@drawable/tech2"/>
     <item android:title="health"
         android:id="@+id/health"
-        android:icon="@drawable/healthicon"/>
+        android:icon="@drawable/healthiscon"/>
     <item android:title="business"
         android:id="@+id/business"
         android:icon="@drawable/business"/>
